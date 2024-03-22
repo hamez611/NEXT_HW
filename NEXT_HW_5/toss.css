@@ -1,0 +1,307 @@
+body {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    min-height: 100%;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+/* ----------------------- 배너 ------------------------- */
+header {
+    background-color: #19191b;
+    display: inline-flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+}
+
+.hleft {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.hright {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+.toss {
+    color: #636362;
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.logopic {
+    width: 3em;
+    height: 80%;
+}
+
+.bell {
+    width: 6.5%;
+    padding-bottom: 0.3%;
+    margin-left: 10%;
+}
+
+/* ----------------------- 토스뱅크 ------------------------- */
+
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #19191b;
+    width: 94%;
+    margin-top: 4.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    min-height: 125px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+#white {
+    color: white;
+}
+
+#gray {
+    color: #636362;
+}
+
+#lightgray {
+    color: #a2a1a6;
+}
+
+.firstl {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 3%;
+}
+
+.firstr {
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 3%;
+}
+
+/* ----------------------- 계좌 ------------------------- */
+.second {
+    display: flex;
+    background-color: #19191b;
+    width: 94%;
+    margin-top: 1.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 5%;
+    height: 375px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.kb {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: 2% 2.5%;
+}
+
+.bleft {
+    display: flex;
+}
+.info {
+    margin-left: 18%;
+}
+
+.bank {
+    font-weight: bold;
+    margin-bottom: 5%;
+    white-space: nowrap;
+}
+
+.money {
+    font-weight: bold;
+    font-size: 1.3em;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: flex;
+    margin-right: 7.5%;
+}
+
+.send {
+    background-color: #2b2b36;
+    white-space: nowrap;
+    width: 200%;
+    border-radius: 8px;
+    align-items: center;
+    position: relative;
+    padding: 30% 45%;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+}
+
+.woori {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 2.5%;
+}
+
+.woorilogo {
+    margin-left: 2%;
+}
+
+.savings {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-bottom: 5%;
+}
+
+.info2 {
+    margin-left: 30%;
+}
+#line {
+    margin-top: 5%;
+}
+.line {
+    position: absolute;
+    width: 87.5vw;
+    border-top: 1px solid;
+    margin-top: 5%;
+    color: #292931;
+}
+
+.more {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.3em;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-top: 9%;
+    margin-left: 35%;
+}
+
+/* ----------------------- 카드 연결 ------------------------- */
+.third {
+    display: flex;
+    background-color: #19191b;
+    width: 100%;
+    margin-top: 1.5%;
+    margin-right: 3%;
+    margin-bottom: 1.5%;
+    min-height: 150px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.tleft {
+    display: flex;
+    margin-top: 2.5%;
+}
+.cards {
+    margin-left: 3%;
+}
+.info3 {
+    margin-left: 2%;
+}
+
+/* ----------------------- 옵션 ------------------------- */
+.fourth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #19191b;
+    width: 100%;
+    margin-right: 3%;
+    min-height: 125px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vline {
+    border-left: 3px solid;
+    height: 50px;
+    color: #292931;
+}
+
+.fourthl {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-left: 3%;
+}
+.fourthm {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.fourthr {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-right: 3%;
+}
+
+.blank {
+    display: flex;
+    align-items: center;
+    background-color: #19191b;
+    width: 100%;
+    margin-top: 0;
+    margin-right: 3%;
+    min-height: 100px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+/* ----------------------- 하단 ------------------------- */
+footer {
+    height: 60px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: #19191b;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #292931;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
