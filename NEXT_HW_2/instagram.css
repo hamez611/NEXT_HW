@@ -1,0 +1,259 @@
+header {
+    display: inline-flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    color: white;
+    margin-bottom: 10px;
+    background-color: black;
+    z-index: 100;
+    left: 0;
+    right: 0;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    top: 100%;
+    margin-top: 60px;
+    flex-direction: column;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+/*------------------- 헤더 ----------------------*/
+
+/* .bluecheck {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #3897f0;
+    border-radius: 50%;
+    margin-left: 5px;
+    position: relative;
+} */
+
+.back {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    align-items: center;
+    padding-left: 1%;
+}
+.username {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.more {
+    display: flex;
+    align-items: flex-start;
+    width: auto;
+    padding-right: 1%;
+}
+
+/* ------------------- 프로필창 -------------------- */
+
+.profile {
+    position: absolute;
+    top: 10%;
+}
+
+.intro {
+    color: white;
+    display: flex;
+    width: 100%;
+    height: max-content;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.pjpg {
+    width: 25%;
+    height: auto;
+}
+
+.pjpg:hover {
+    cursor: grab;
+}
+
+.back:hover {
+    cursor: pointer;
+}
+.more:hover {
+    cursor: pointer;
+}
+.feed {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: x-large;
+}
+.follower {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: x-large;
+}
+
+.following {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: x-large;
+}
+
+.description {
+    color: white;
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+.changmo {
+    margin-bottom: 100;
+    padding-bottom: 0;
+    font-size: 200%;
+    font-weight: bold;
+}
+.mem {
+    margin-top: 5;
+    font-size: 180%;
+}
+.blue {
+    color: rgb(198, 232, 246);
+    font-size: 180%;
+}
+
+.youtube {
+    font-size: 180%;
+    font-weight: bold;
+    text-decoration: underline;
+    display: flex;
+}
+
+.youtube:hover {
+    cursor: pointer;
+}
+
+.seconds:hover {
+    cursor: pointer;
+}
+
+.follower:hover {
+    cursor: pointer;
+}
+
+.following:hover {
+    cursor: pointer;
+}
+.buttons {
+    display: flex;
+}
+.follow:hover {
+    background: rgb(20, 116, 218);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 79, 255, 0.6);
+}
+.follow {
+    background-color: #3897f0;
+    width: 40%;
+    height: 75%;
+    margin-left: 8%;
+    margin-top: 4%;
+    border-radius: 15px;
+    align-items: center;
+    position: relative;
+    padding: 1%;
+    color: white;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    border: none;
+}
+.msg {
+    width: 40%;
+    height: 75%;
+    margin-left: 2%;
+    margin-top: 4%;
+    border-radius: 15px;
+    align-items: center;
+    padding: 1%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(25, 26, 26);
+    border: none;
+}
+.msg:hover {
+    background: rgb(38, 41, 51);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(19, 22, 30, 0.6);
+}
+.add {
+    width: 3.5%;
+    margin-left: 2%;
+    margin-top: 4%;
+    border-radius: 15px;
+    background-color: rgb(56, 54, 54);
+    color: white;
+}
+
+.add:hover {
+    background: rgb(38, 41, 51);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(19, 22, 30, 0.6);
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 17%;
+    margin-right: 17%;
+    height: auto;
+}
+
+.pictures {
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pictures:hover {
+    cursor: help;
+}
+.feeds {
+    width: 33%;
+    overflow: hidden;
+}
+
+/*------------------------ 하단 아이콘 -----------------------*/
+footer {
+    height: 50px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,64 @@
+body {
+    background-color: #101e3ab4;
+}
+a:visited {
+    color: rgb(168, 53, 221);
+}
+h2 mark {
+    color: #222;
+    background: #f7941e;
+    font-size: xx-large;
+}
+li {
+    color: rgba(255, 255, 255, 1);
+}
+img {
+    width: 100%;
+}
+
+h2 {
+    font-size: xx-small;
+}
+.container {
+    width: 88%;
+    color: white;
+    margin: 0 auto;
+    border: 1px solid #f3f3f3;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 60px;
+}
+#contentWrapper {
+    max-width: 430px;
+
+    margin: 0 auto;
+}
+p {
+    font-size: 20px;
+    font-weight: 700;
+}
+b {
+    color: #f7941e;
+}
+h3 {
+    text-align: center;
+    color: black;
+}
+.noDot {
+    list-style: none;
+    padding-top: 300px;
+}
+
+.secret {
+    color: white;
+    font-weight: strong;
+}
+
+ol a {
+    font-size: xx-small;
+}
+
+.footer {
+    align-content: normal;
+    float: right;
+}
