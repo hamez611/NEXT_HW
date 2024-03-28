@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'info.css'%}" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Infos</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="person">
+                <div><img id="matt" src="static/matt.png" /></div>
+                <h2>Hyunsung Shin</h2>
+                <p class="cc">+82 10-7389-3269</p>
+                <p class="cc">hamez611@korea.ac.kr</p>
+            </div>
+            <hr />
+            <div class="options">
+                <a href="{% url 'info' %}"><strong>Home</strong></a>
+                <a href="{% url 'project' %}">Project</a>
+                <p>Profile</p>
+                <p>Contact</p>
+            </div>
+        </div>
+        <section id="soonSection">
+            <h1>Coming <span>soon!</span></h1>
+            <p>
+                (먼 훗날 엄청난 페이지가 될 예정입니다..)
+                <br />
+                <a href="mailto:hamez611@korea.ac.kr" class="btnMail">hamez611@korea.ac.kr</a>
+            </p>
+        </section>
+    </body>
+</html>
