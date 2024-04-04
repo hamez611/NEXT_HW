@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'new.css'%}" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="person">
+                <div><img id="matt" src="{% static 'matt.png' %}" /></div>
+                <h2>Hyunsung Shin</h2>
+                <p class="cc">+82 10-7389-3269</p>
+                <p class="cc">hamez611@korea.ac.kr</p>
+            </div>
+            <hr />
+            <div class="options">
+                <a href="{% url 'info' %}">Home</a>
+                <a href="{% url 'project' %}">Project</a>
+                <a href="{% url 'list' %}"><strong>Blog</strong></a>
+                <p>Contact</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top">
+                <h2>블로그 작성하기</h2>
+                <hr class="divider" />
+            </div>
+            <form action="/new" method="post">
+                {% csrf_token %}
+                <div class="ctop">
+                    <div>제목</div>
+                    <input class="title" type="text" name="title" />
+                </div>
+
+                <div class="cmid">
+                    <div>카테고리 선택</div>
+                    <select name="category">
+                        {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="cbot">
+                    <div>내용</div>
+                    <textarea class="write" name="content" cols="30" rows="10"></textarea>
+                    <div class="submit"><button type="submit">작성 완료</button></div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

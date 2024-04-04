@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'bloghome.css'%}" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="person">
+                <div><img id="matt" src="{% static 'matt.png' %}" /></div>
+                <h2>Hyunsung Shin</h2>
+                <p class="cc">+82 10-7389-3269</p>
+                <p class="cc">hamez611@korea.ac.kr</p>
+            </div>
+            <hr />
+            <div class="options">
+                <a href="{% url 'info' %}">Home</a>
+                <a href="{% url 'project' %}">Project</a>
+                <a href="{% url 'list' %}"><strong>Blog</strong></a>
+                <p>Contact</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <buttom><a href="{% url 'new' %}"><글 쓰러 가기></a></button>
+
+                <div>
+                    <h3>카테고리</h3>
+                    <div><hr class="divider" /></div>
+                </div>
+                <ul>
+                    {% for category in categories %}
+                    <li>
+                        <a href="{% url 'category_detail' category.id %}">{{ category.name }}</a>:<a
+                            >{{ category.num_articles }}</a
+                        >
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="all">
+                <div>
+                    <h2>전체 블로그</h2>
+                    <div><hr class="divider" /></div>
+                </div>
+                <ul>
+                    {% for article in articles %}
+                    <li><a href="{% url 'detail' article.id %}">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

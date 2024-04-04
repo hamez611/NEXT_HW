@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'detail.css'%}" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="person">
+                <div><img id="matt" src="{% static 'matt.png' %}" /></div>
+                <h2>Hyunsung Shin</h2>
+                <p class="cc">+82 10-7389-3269</p>
+                <p class="cc">hamez611@korea.ac.kr</p>
+            </div>
+            <hr />
+            <div class="options">
+                <a href="{% url 'info' %}">Home</a>
+                <a href="{% url 'project' %}">Project</a>
+                <a href="{% url 'list' %}"><strong>Blog</strong></a>
+                <p>Contact</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="bar">
+                <a id="home" href="{% url 'list' %}">블로그 홈</a>
+            </div>
+            <div class="detail">
+                <div class="category">{{ article.category.name }}</div>
+                <div class="title">{{ article.title }}</div>
+                <div class="date">{{ article.date|date:"Y. m. d. H:i" }}</div>
+                <hr class="divider" />
+            </div>
+            <div class="in">{{ article.content }}</div>
+        </div>
+    </body>
+</html>

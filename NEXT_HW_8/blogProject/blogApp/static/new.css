@@ -1,0 +1,103 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eceff7;
+    display: flex;
+}
+
+.navbar {
+    width: 200px; /* 네비게이션 바의 너비 */
+    background: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#matt {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.cc {
+    color: #a2a2a2;
+    margin: 2px;
+    font-size: smaller;
+}
+
+hr {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    margin: 6%;
+}
+
+a:hover { 
+    text-decoration: underline;
+}
+
+
+.content {
+    margin-left: 250px;
+    padding: 20px 10px;
+    overflow-wrap: break-word;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-grow: 1;
+    width: calc(100% - 200px);
+}
+
+hr.divider {
+    width: 90%; /* 구분선의 너비 */
+    height: 1px; /* 구분선의 두께 */
+    background-color: #d0d0d0; /* 구분선 색상 *//* 상하 간격 및 가운데 정렬 */
+    margin: 1px;
+}
+
+.ctop {
+    margin-top:2%;
+}
+
+.title {
+    width: 500px;
+}
+
+.cmid {
+    margin-top:1%;
+}
+
+.cbot {
+    margin-top:1%;
+    position: relative;
+}
+
+.write {
+    width: 500px;
+}
+
+.submit {
+    display: flex;
+    left: 433px;
+    margin-top: 1%;
+    position: absolute;
+}
