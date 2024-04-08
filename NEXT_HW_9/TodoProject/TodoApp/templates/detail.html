@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To-do List</title>
+    </head>
+    <body>
+        <div class="all">
+            <div>
+                <h3>제목</h3>
+                <p>{{ post.title }}</p>
+            </div>
+            <div>
+                <h3>마감기한</h3>
+                <label for="deadline">{{ post.deadline|date:"Y-m-d H:i" }}</label>
+            </div>
+            <div>
+                <h3>세부사항</h3>
+                <p>{{ post.content }}</p>
+            </div>
+            <div>
+                <a href="{% url 'home' %}">홈으로</a>
+                <a href="{% url 'update' post.pk %}">수정하기</a>
+                <a href="{% url 'delete' post.pk %}">삭제하기</a>
+            </div>
+        </div>
+    </body>
+</html>

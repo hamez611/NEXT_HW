@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 가로 방향으로 중앙 정렬 */ /* 세로 방향으로 중앙 정렬 */
+    min-height: 100vh; /* 최소 높이를 뷰포트 높이의 100%로 설정 */
+    font-family: Arial, sans-serif;
+    background-color: #2f2e2e;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border:3px solid #f7b2ef;
+    box-sizing: border-box;
+    width: 600px;
+    height: 600px;
+    color: white;
+    position: relative;
+}
+
+.todo {
+    margin: 20px;
+    font-size: 2em;
+    text-decoration-line: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+li:hover {
+    background: #515050;
+    box-shadow: 0 2px 4px #323131;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px; /* 이 부분이 중요합니다, 각 이벤트가 전체 너비를 차지하게 하여 좌우에 여백을 둡니다. */
+    margin-top: 8px;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    margin-right: 40px;
+    padding: 10px;
+    border:1px solid #888888;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* 이 부분이 중요합니다, 각 이벤트가 전체 너비를 차지하게 하여 좌우에 여백을 둡니다. */
+}
+
+.time {
+    margin-right:3px;
+}
+
+.new:hover {
+    background: #515050;
+    box-shadow: 0 2px 4px #323131;
+}

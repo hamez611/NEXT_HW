@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'new.css' %}" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <form class="all" action="" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="title">해야 할 일</label>
+                    <input type="text" name="title" id="title" placeholder="" />
+                </div>
+                <div>
+                    <label for="deadline">마감 기한</label>
+                    <input type="datetime-local" name="deadline" />
+                </div>
+                <div>
+                    <label for="content">내용</label>
+                    <textarea name="content" id="content" cols="30" rows="10" placeholder="세부사항"></textarea>
+                </div>
+                <button type="submit">추가하기</button>
+            </form>
+        </div>
+    </body>
+</html>
