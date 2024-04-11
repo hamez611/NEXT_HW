@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="{% static 'favicon.png' %}" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ceviche+One&family=Inter:wght@900&family=Jua&family=Koulen&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+        {% block css %} {% endblock css %}
+        <title>HS</title>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="person">
+                <div><img id="matt" src={% static 'matt.png' %} /></div>
+                <h2>Hyunsung Shin</h2>
+                <p class="cc">+82 10-7389-3269</p>
+                <p class="cc">hamez611@korea.ac.kr</p>
+            </div>
+            <hr />
+            <div class="options">
+                <a href="{% url 'info' %}"><strong>Home</strong></a>
+                <a href="{% url 'project' %}">Project</a>
+                <a href="{% url 'list' %}">Blog</a>
+                <p>Contact</p>
+            </div>
+        </div>
+
+        <div class="content">{% block content %} {% endblock content %}</div>
+
+        <footer>
+            <div class="inner">
+                <div class="message">가장 개인적인 것이 가장 창의적인 것</div>
+                <div class="birthday">페이지 주인 탄생일: 2001년 6월 11일</div>
+                <div class="copyright">Copyright 2024 ⓒ All rights reserved</div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bloghome.css'%}" />
+{% endblock %} {% block content %}
+            <div class="left">
+                <buttom><a href="{% url 'new' %}"><글 쓰러 가기></a></button>
+
+                <div>
+                    <h3>카테고리</h3>
+                    <div><hr class="divider" /></div>
+                </div>
+                <ul>
+                    {% for category in categories %}
+                    <li>
+                        <a href="{% url 'category_detail' category.id %}">{{ category.name }}</a>:<a
+                            >{{ category.num_articles }}</a
+                        >
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="all">
+                <div>
+                    <h2>전체 블로그</h2>
+                    <div><hr class="divider" /></div>
+                </div>
+                <ul>
+                    {% for article in articles %}
+                    <li><a href="{% url 'detail' article.id %}">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+{% endblock %}

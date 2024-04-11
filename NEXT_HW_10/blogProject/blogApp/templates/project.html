@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{%static 'project.css' %}" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Project</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="person">
+                <div><img id="matt" src={% static 'matt.png' %} /></div>
+                <h2>Hyunsung Shin</h2>
+                <p class="cc">+82 10-7389-3269</p>
+                <p class="cc">hamez611@korea.ac.kr</p>
+            </div>
+            <hr />
+            <div class="options">
+                <a href="{% url 'info' %}">Home</a>
+                <a href="{% url 'project' %}"><strong>Project</strong></a>
+                <a href="{% url 'list' %}">Blog</a>
+                <p>Contact</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="content1">
+                <div class="instagram">
+                    <img src={% static 'instagram.png' %} />
+                    <div class="content-info">
+                        <h3 class="portfolio-title">Clone Instagram</h3>
+                        <p class="portfolio-description">짱모 인스타그램 클론 코딩</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content2">
+                <div class="toss">
+                    <img src={% static 'toss.png' %} />
+                    <div class="content-info">
+                        <h3 class="portfolio-title">Clone Toss</h3>
+                        <p class="portfolio-description">토스 클론 코딩</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content3">
+                <div class="next">
+                    <div class="content-info">
+                        <h3 class="portfolio-title">What's Next?</h3>
+                    </div>
+                </div>  
+            </div>
+        </body>
+</html>

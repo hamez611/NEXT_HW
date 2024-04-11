@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'new.css'%}" />
+{% endblock %} {% block content %}
+<div class="top">
+    <h2>블로그 작성하기</h2>
+    <hr class="divider" />
+</div>
+<form action="{% url 'new' %}" method="post">
+    {% csrf_token %}
+    <div class="ctop">
+        <div>제목</div>
+        <input class="title" type="text" name="title" />
+    </div>
+
+    <div class="cmid">
+        <div>카테고리 선택</div>
+        <select name="category">
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="cbot">
+        <div>내용</div>
+        <textarea class="write" name="content" cols="30" rows="10"></textarea>
+        <div class="submit"><button type="submit">작성 완료</button></div>
+    </div>
+</form>
+{% endblock %}

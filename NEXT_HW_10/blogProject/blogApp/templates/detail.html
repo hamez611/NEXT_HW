@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css'%}" />
+{% endblock %} {% block content %}
+            <div class="bar">
+                <a id="home" href="{% url 'list' %}">블로그 홈</a>
+            </div>
+            <div class="detail">
+                <div class="category">{{ article.category.name }}</div>
+                <div class="title">{{ article.title }}</div>
+                <div class="date">{{ article.date|date:"Y. m. d. H:i" }}</div>
+                <hr class="divider" />
+            </div>
+            <div class="in">{{ article.content }}</div>
+            <hr class="cdivider" />
+            <div class= "comments">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="content" placeholder="댓글을 입력해주세요" />
+                    <button type="submit">작성</button>
+                </form>
+
+                {% for comment in article.comments.all %}
+                    <li>{{comment.content}}<a class="delete" href={% url 'delete-comment' article.id comment.pk %}>삭제</a>
+                        <ul>
+                            {% for recomment in comment.recomments.all %}
+                            <li> {{ recomment.content }}
+                                <a class="delete" href={% url 'delete_recomment' article.id comment.pk recomment.pk %}>삭제</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <form method="POST" action="{% url 'new_recomment' comment.pk %}">
+                            {% csrf_token %}
+                            <input type="text" name="content" placeholder="대댓글을 입력해주세요" />
+                            <button type="submit">작성</button>
+                        </form>
+                    </li>    
+                {% endfor %}
+            </div>
+{% endblock %}
