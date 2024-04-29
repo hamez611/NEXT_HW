@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% load account socialaccount %} {% providers_media_js %}
+<!-- prettier-ignore-start -->
+{% block title %} 로그인 {% endblock%}
+<!-- prettier-ignore-end -->
+{% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'registration/detail.css' %}" />
+{% endblock %} {% block content %}
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="posts_box">
+        {% if form.errors %}
+        <ul>
+            {% for field, error_list in form.errors.items %}
+            <li>{{ field }} : {{ error_list }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <input type="text" name="username" placeholder="아이디" class="registration-input" />
+        <input type="password" name="password" placeholder="비밀번호" class="registration-input" />
+        <div class="social-logins">
+            <a href="{% provider_login_url 'google' %}" class="primaryAction google-login"> Continue with Google </a>
+
+            <a href="{% provider_login_url 'kakao' %}" class="primaryAction kakao-login"> Continue with Kakao </a>
+        </div>
+        <div class="registration-box"></div>
+
+        <button id="post-button">로그인</button>
+    </div>
+</form>
+
+{% endblock %}

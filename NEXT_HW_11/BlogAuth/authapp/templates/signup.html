@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block title %} 가입 {% endblock %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'registration/detail.css' %}" />
+{% endblock %} {% block content %}
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="posts_box">
+      {% if form.non_field_errors %}
+      <ul>
+          {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>  <!-- 전체 폼에 대한 에러 메시지 -->
+          {% endfor %}
+      </ul>
+      {% endif %}
+
+      <div>
+          <label for="username">Username:</label>
+          {{ form.username }}  <!-- 폼 내부 오류 메시지를 렌더링하지 않음 -->
+      </div>
+
+      <div>
+          <label for="password1">Password:</label>
+          {{ form.password1 }}
+      </div>
+
+      <div>
+          <label for="password2">Password Confirmation:</label>
+          {{ form.password2 }}
+      </div>
+
+
+    <div class="registration-box" >
+        <button id="post-button" type="submit">회원가입</button>
+    </div>
+</form>
+{% endblock %}
