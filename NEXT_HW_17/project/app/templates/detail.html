@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% block title %} Detail!{% endblock %} {% block css%} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'detail.css' %}" />
+{% endblock %} {% block content %}
+        <div class="detail-post_container">
+            <div class="detail_title">제목: {{ post.title }}</div>
+            <div class="detail_content">내용: {{ post.content }}</div>
+            <div class="detail_content">작성자: {{ post.author.username }}</div>
+            <div class="detail-post_btn">
+                <a href="{% url 'home' %}">홈 화면</a>
+                {% if user.is_authenticated and user.pk == post.author.pk %}
+                <a href="{% url 'edit' post.pk %}">수정하기</a>
+                <a href="{% url 'delete' post.pk %}">삭제하기</a>
+                {% endif %}
+                <span class="like-count">좋아요 수 {{ post.likes.count }}</span>
+            </div>
+            <form id="comment-form">
+                {% csrf_token %}
+                <input type="text" id="comment-content" name="content" />
+                <button type="submit">댓글 작성</button>
+            </form>
+            <button class="like-button">좋아요</button>
+            <ul id="comment-list">
+                {% for comment in post.comments.all %}
+                <li>
+                    <span>{{ comment.content }} </span>
+                    <span>{{ comment.author.username }} </span>
+                    {% if user.pk == comment.author.pk and user.is_authenticated %}
+                    <a href="{% url 'delete_comment' post.pk comment.pk %}">삭제</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            const likeButton = document.querySelector('.like-button');
+            const likeCount = document.querySelector('.like-count');
+            const commentForm = document.getElementById('comment-form');
+            const commentList = document.getElementById('comment-list');
+            const commentContent = document.getElementById('comment-content');
+
+            const handleLike = async () => {
+                try {
+                    const res = await axios.post('/like', { post_pk: '{{ post.pk }}' });
+                    likeCount.innerHTML = '좋아요 수 ' + res.data.like_count;
+                } catch (err) {
+                    console.error(err);
+                }
+            };
+
+            const handleComment = async (event) => {
+                event.preventDefault(); // 기본 폼 제출 동작을 막음
+                const content = commentContent.value.trim();
+                if (content === '') {
+                    alert('댓글 내용을 입력하세요.');
+                    return;
+                }
+        
+                try {
+                    const res = await axios.post('/comment', {
+                        post_pk: '{{ post.pk }}',
+                        content: commentContent.value,
+                    });
+                    commentContent.value = ''; // 입력 필드 초기화
+                    const newComment = document.createElement('li');
+                    newComment.innerHTML = `
+                        <span>${res.data.content}</span>
+                        <span>${res.data.author}</span>
+                        ${res.data.can_delete ? `<a href="/delete-comment/${res.data.post_pk}/${res.data.comment_pk}">삭제</a>` : ''}
+                    `;
+                    commentList.appendChild(newComment); // 새로운 댓글을 댓글 목록에 추가
+                } catch (err) {
+                    console.error(err);
+                }
+            };
+
+            likeButton.addEventListener('click', handleLike);
+            commentForm.addEventListener('submit', handleComment);
+        </script>
+    </div>
+    {% endblock %}
