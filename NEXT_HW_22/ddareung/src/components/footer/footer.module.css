@@ -1,0 +1,10 @@
+/* Footer.module.css */
+.footer {
+    background-color: #5a67d8; /* 헤더와 일치하는 색상 */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

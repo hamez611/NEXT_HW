@@ -1,0 +1,17 @@
+/* WeatherSearch.module.css */
+.category-buttons {
+    margin-bottom: 20px;
+}
+
+.search-box {
+    margin: 20px 0;
+}
+
+.bike-info {
+    background: #e2e8f0; /* 배경색 변경 */
+    border: 1px solid #cbd5e0; /* 경계선 색상 변경 */
+    color: #2d3748; /* 글자 색상 변경 */
+    padding: 10px;
+    border-radius: 20px; /* 둥글게 처리 */
+    display: inline-block;
+}

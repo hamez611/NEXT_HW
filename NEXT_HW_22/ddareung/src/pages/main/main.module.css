@@ -1,0 +1,11 @@
+/* Main.module.css */
+div {
+    padding: 20px;
+    text-align: center;
+    color: #2d3748;
+    background-color: #e2e8f0; /* 부드러운 회색 계열 배경 */
+}
+
+h1 {
+    color: #5a67d8; /* 제목 색상 강조 */
+}

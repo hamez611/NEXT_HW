@@ -1,0 +1,6 @@
+/* About.module.css */
+div {
+    padding: 20px;
+    text-align: center;
+    color: #2d3748; /* 더 진한 회색으로 글자색 변경 */
+}
