@@ -5,19 +5,19 @@ import { GNB } from '../../components/GNB';
 import { GNB_TYPE, PRODUCTS } from '../../constants/common';
 import styled from '@emotion/styled';
 import React, { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
-
+import { useCartStore } from '@/app/store/CartStore';
 function ProductPage() {
     const { id } = useParams();
     const product = PRODUCTS.find((item) => item.id === parseInt(id));
-    const { cart, setCart } = useContext(CartContext);
+    const { cart, setCart } = useCartStore();
 
     const handleCart = (product) => {
         if (cart.find((item) => item.id === product.id)) {
             alert('이미 장바구니에 추가된 상품입니다.');
             return;
         }
-        setCart((prev) => [...prev, product]);
+        const newCart = [...cart, product];
+        setCart(newCart);
         alert('장바구니에 추가되었습니다.');
     };
 

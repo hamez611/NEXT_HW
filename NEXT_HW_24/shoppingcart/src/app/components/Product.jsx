@@ -5,18 +5,19 @@ import { Button } from './Button';
 import { useRouter } from 'next/navigation';
 import { PAGE } from '../constants/common';
 import { Box } from '../styles/StyleComponent';
-import { CartContext } from '../context/CartContext';
+import { useCartStore } from '../store/CartStore';
 
 export const Product = ({ product, ...rest }) => {
     const router = useRouter();
-    const { cart, setCart } = useContext(CartContext);
+    const { cart, setCart } = useCartStore();
 
     const handleCart = (product) => {
         if (cart.find((item) => item.id === product.id)) {
             alert('이미 장바구니에 추가된 상품입니다.');
             return;
         }
-        setCart((prev) => [...prev, product]);
+        const newCart = [...cart, product];
+        setCart(newCart);
         alert('장바구니에 추가되었습니다.');
     };
 
