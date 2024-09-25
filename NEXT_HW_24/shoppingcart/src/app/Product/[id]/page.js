@@ -5,12 +5,12 @@ import { GNB } from '../../components/GNB';
 import { GNB_TYPE, PRODUCTS } from '../../constants/common';
 import styled from '@emotion/styled';
 import React, { useContext } from 'react';
-// import { CartContext } from '../../../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 
 function ProductPage() {
     const { id } = useParams();
     const product = PRODUCTS.find((item) => item.id === parseInt(id));
-    // const { cart, setCart } = useContext(CartContext);
+    const { cart, setCart } = useContext(CartContext);
 
     const handleCart = (product) => {
         if (cart.find((item) => item.id === product.id)) {

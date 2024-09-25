@@ -2,12 +2,12 @@
 
 import styled from '@emotion/styled';
 import { Button } from './Button';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { PAGE } from '../constants/common';
 import { Box } from '../styles/StyleComponent';
 
 export const ProductInCart = ({ product, cart, setCart, ...rest }) => {
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const handleRemove = (product) => {
         const newCart = cart.filter((item) => item !== product);
@@ -25,7 +25,7 @@ export const ProductInCart = ({ product, cart, setCart, ...rest }) => {
                 <Description>{product.description}</Description>
             </Box>
             <Box gap={4} style={{ width: 'fit-content' }}>
-                <Button onClick={() => navigate(`${PAGE.PRODUCT}/${product.id}`)}>제품 설명 보기</Button>
+                <Button onClick={() => router.push(`${PAGE.PRODUCT}/${product.id}`)}>제품 설명 보기</Button>
                 <Button onClick={() => handleRemove(product)}>제거하기</Button>{' '}
             </Box>
         </Item>

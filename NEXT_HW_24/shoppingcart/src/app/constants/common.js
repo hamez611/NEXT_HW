@@ -1,7 +1,7 @@
 export const PAGE = {
     HOME: '/',
     PRODUCT: '/Product',
-    CART: '/cart',
+    CART: '/CartPage',
 };
 
 export const GNB_TYPE = {

@@ -5,9 +5,11 @@ import { Button } from './Button';
 import { useRouter } from 'next/navigation';
 import { PAGE } from '../constants/common';
 import { Box } from '../styles/StyleComponent';
+import { CartContext } from '../context/CartContext';
 
-export const Product = ({ product, cart, setCart, ...rest }) => {
+export const Product = ({ product, ...rest }) => {
     const router = useRouter();
+    const { cart, setCart } = useContext(CartContext);
 
     const handleCart = (product) => {
         if (cart.find((item) => item.id === product.id)) {
