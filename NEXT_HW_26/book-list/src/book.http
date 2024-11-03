@@ -1,39 +1,49 @@
 @server = http://localhost:3000
 
-#게시글 조회
+# 모든 게시글 조회
 GET {{server}}/book
 
-###게시글 생성
+### 게시글 생성 (개별 요청)
 POST {{server}}/book
 Content-Type: application/json
 
-[
-    {
-        "id": "1",
-        "title": "책 제목",
-        "writer": "작가",
-        "isAvailable": true,
-        "createdDt": "2024-11-02T12:12:12.123Z"
-    },
+{
+    "id": "1",
+    "title": "책 제목",
+    "writer": "작가",
+    "isAvailable": true,
+    "createdDt": "2024-11-02T12:12:12.123Z"
+}
 
-    {
-        "id": "2",
-        "title": "텍사스 홀덤",
-        "writer": "onesound",
-        "isAvailable": true,
-        "createdDt": "2024-11-02T12:12:12.124Z"
-    },
+### 두 번째 게시글 생성
+POST {{server}}/book
+Content-Type: application/json
 
-    {
-        "id": "3",
-        "title": "이 땅에 태어나서",
-        "writer": "정주영",
-        "isAvailable": true,
-        "createdDt": "2024-11-02T12:12:12.125Z"
-    }
-]
+{
+    "id": "2",
+    "title": "텍사스 홀덤",
+    "writer": "onesound",
+    "isAvailable": true,
+    "createdDt": "2024-11-02T12:12:12.124Z"
+}
+
+### 세 번째 게시글 생성
+POST {{server}}/book
+Content-Type: application/json
+
+{
+    "id": "3",
+    "title": "이 땅에 태어나서",
+    "writer": "정주영",
+    "isAvailable": true,
+    "createdDt": "2024-11-02T12:12:12.125Z"
+}
+
 ### 특정 게시글 조회
-GET {{server}}/book/1
+GET {{server}}/book/3
+
+
+GET {{server}}/book/2
 
 ### 게시글 삭제
 DELETE {{server}}/book/1

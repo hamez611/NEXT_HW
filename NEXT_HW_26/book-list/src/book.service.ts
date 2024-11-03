@@ -13,10 +13,10 @@ export class BookService {
   }
 
   getBook(id) {
-    const book = this.books.find((book) => {
-      return book.id === id;
-    });
-    console.log(book);
+    const book = this.books.find((book) => book.id === id);
+    if (!book) {
+      throw new Error('Book not found');
+    }
     return book;
   }
 

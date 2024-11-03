@@ -8,42 +8,40 @@ import {
   Put,
 } from '@nestjs/common';
 import { BookService } from './book.service';
+import { BookDto } from './book.model';
 
 @Controller('book')
 export class BookController {
-  bookService: BookService;
-  constructor() {
-    this.bookService = new BookService();
-  }
+  constructor(private readonly bookService: BookService) {} // DI 사용
 
   @Get()
-  getAllPosts() {
+  getAllBooks() {
     console.log('모든 게시글 가져오기');
     return this.bookService.getAllBooks();
   }
 
   @Post()
-  createPost(@Body() bookDto) {
+  createBook(@Body() bookDto: BookDto) {
     console.log('게시글 작성');
     this.bookService.createBook(bookDto);
     return 'success';
   }
 
   @Get('/:id')
-  getPost(@Param('id') id: string) {
-    console.log(['게시글 하나 가져오기']);
+  getBook(@Param('id') id: string) {
+    console.log('게시글 하나 가져오기');
     return this.bookService.getBook(id);
   }
 
   @Delete('/:id')
-  deletePost(@Param('id') id: string) {
+  deleteBook(@Param('id') id: string) {
     console.log('게시글 삭제');
     this.bookService.delete(id);
     return 'success';
   }
 
   @Put('/:id')
-  updatePost(@Param('id') id: string, @Body() bookDto) {
+  updateBook(@Param('id') id: string, @Body() bookDto: BookDto) {
     console.log('게시글 업데이트', id, bookDto);
     return this.bookService.updateBook(id, bookDto);
   }
